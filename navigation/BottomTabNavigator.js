@@ -30,6 +30,15 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
         }}
       />
+
+    <BottomTab.Screen
+        name="Settings"
+        component={LinksScreen}
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-settings" />,
+        }}
+      />
       
     </BottomTab.Navigator>
   );
@@ -47,5 +56,7 @@ function getHeaderTitle(route) {
       return 'Смотрю';
     case 'Series':
       return 'Уже посмотрел';
+    case 'Settings':
+      return 'Настройки';
   }
 }
